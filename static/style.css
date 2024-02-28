@@ -1,0 +1,11 @@
+body{
+    background-color: aqua;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+}
+.headers_buiten_ul{
+    margin-left: 300px;
+}
+ul{
+    margin-left: 300px;
+}
