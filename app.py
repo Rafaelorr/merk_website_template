@@ -10,21 +10,21 @@ def home():
 @app.route("/bestel",methods=["GET","POST"])
 def bestel():
   if request.method == "POST":
-      bestelling:dict = {
-          "email":request.form.get("email"),
-          "postcode":request.form.get("postcode"),
-          "straatnaam":request.form.get("straatnaam"),
-          "nummer":request.form.get("nummer")
-      }
-      con:sqlite3.Connection = sqlite3.connect('database.db')
-      cur:sqlite3.Cursor = sqlite3.Cursor(con)
+    bestelling:dict = {
+      "acountcode":request.form.get("acountcode"),
+      "postcode":request.form.get("postcode"),
+      "straatnaam":request.form.get("straatnaam"),
+      "nummer":request.form.get("nummer")
+    }
+    con:sqlite3.Connection = sqlite3.connect('database.db')
+    cur:sqlite3.Cursor = sqlite3.Cursor(con)
 
-      cur.executescript('INSERT INTO bestellingen (email,postcode,straatnaam,nummer) VALUES('+ bestelling["email"] +','+bestelling["postcode"]+','+bestelling["straatnaam"]+','+bestelling["nummer"]+')')
-      con.commit()
+    cur.executescript('INSERT INTO bestellingen (email,postcode,straatnaam,nummer) VALUES('+ bestelling["acountcode"] +','+bestelling["postcode"]+','+bestelling["straatnaam"]+','+bestelling["nummer"]+')')
+    con.commit()
 
-      cur.close()
-      con.close()
-      render_template("succes.html")
+    cur.close()
+    con.close()
+    render_template("succes.html")
   render_template("bestel.html")
 
 if __name__ == "__main__":
