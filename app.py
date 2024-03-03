@@ -24,6 +24,7 @@ def bestel():
 
       cur.close()
       con.close()
+      render_template("succes.html")
   render_template("bestel.html")
 
 if __name__ == "__main__":
