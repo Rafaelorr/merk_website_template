@@ -7,11 +7,20 @@ app = Flask(__name__)
 def home():
     return render_template("home.html")
 
-@app.route("/bestel")
+@app.route("/bestel",methods=["GET","POST"])
 def bestel():
     if request.method == "POST":
-        pass
-    render_template()
+        bestelling:dict = {
+            "email":request.form.get("email"),
+            "postcode":request.form.get("postcode"),
+            "straatnaam":request.form.get("straatnaam"),
+            "nummer":request.form.get("nummer")
+        }
+        con:sqlite3.Connection = sqlite3.connect('database.db')
+        cur:sqlite3.Cursor = sqlite3.Cursor(con)
+
+        cur.executescript('INSERT INTO bestellingen (email,postcode,straatnaam,nummer) VALUES('+ bestelling["email"] +','+bestelling["postcode"]+','+bestelling["straatnaam"]+','+bestelling["nummer"]+')')
+    render_template("bestel.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",debug=True)
