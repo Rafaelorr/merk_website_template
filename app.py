@@ -50,7 +50,7 @@ def create_acount():
       else:
         return "er zijn acountcodes meer over"
     cur.executescript('INSERT INTO acountcodes (acountcodes,credits) VALUES('+acountcode+',50)')
-    return render_template("create_acount_succes.html")
+    return render_template("create_acount_succes.html",acountcode=acountcode)
   return render_template('create_acount.html')
 
 if __name__ == "__main__":
