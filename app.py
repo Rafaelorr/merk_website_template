@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request,url_for
 import sqlite3
 
-app = Flask(__name__)
+app:Flask = Flask(__name__)
 
 @app.route("/")
 def home():
