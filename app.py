@@ -20,6 +20,10 @@ def bestel():
         cur:sqlite3.Cursor = sqlite3.Cursor(con)
 
         cur.executescript('INSERT INTO bestellingen (email,postcode,straatnaam,nummer) VALUES('+ bestelling["email"] +','+bestelling["postcode"]+','+bestelling["straatnaam"]+','+bestelling["nummer"]+')')
+        con.commit()
+
+        cur.close()
+        con.close()
     render_template("bestel.html")
 
 if __name__ == "__main__":
