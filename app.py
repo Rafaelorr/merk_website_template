@@ -4,9 +4,6 @@ from random import randint
 
 app:Flask = Flask(__name__)
 
-@app.route("/")
-def home():
-  return render_template("home.html",bestel_link=url_for("bestel"))
 
 @app.route("/bestel",methods=["GET","POST"])
 def bestel():
@@ -27,7 +24,11 @@ def bestel():
     cur.close()
     con.close()
     render_template("succes.html")
-  render_template("bestel.html")
+  render_template("bestel.html",bestel=url_for("bestel"))
+
+@app.route("/")
+def home():
+  return render_template("home.html",bestel_link=url_for("bestel"))
 
 @app.route("/create_acount",methods=["GET","POST"])
 def create_acount():
