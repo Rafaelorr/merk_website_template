@@ -23,8 +23,8 @@ def bestel():
 
     cur.close()
     con.close()
-    render_template("succes.html")
-  render_template("bestel.html",bestel=url_for("bestel"))
+    return render_template("succes.html")
+  return render_template("bestel.html",bestel=url_for("bestel"))
 
 @app.route("/")
 def home():
