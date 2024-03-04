@@ -6,7 +6,7 @@ app:Flask = Flask(__name__)
 
 @app.route("/")
 def home():
-  return render_template("home.html")
+  return render_template("home.html",bestel_link=url_for("bestel"))
 
 @app.route("/bestel",methods=["GET","POST"])
 def bestel():
