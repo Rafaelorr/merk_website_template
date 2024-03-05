@@ -18,7 +18,7 @@ def bestel():
     cur:sqlite3.Cursor = sqlite3.Cursor(con)
     
     
-    cur.executescript(f"INSERT INTO bestellingen (email,postcode,straatnaam,nummer) VALUES('{bestelling["acountcode"]}','{bestelling["postcode"]}','{bestelling["straatnaam"]}','{bestelling["nummer"]}')")
+    cur.executescript(f"""INSERT INTO bestellingen (email,postcode,straatnaam,nummer) VALUES('{bestelling["acountcode"]}','{bestelling["postcode"]}','{bestelling["straatnaam"]}','{bestelling["nummer"]}')""")
     con.commit()
 
     cur.close()
