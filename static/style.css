@@ -1,25 +1,18 @@
 body{
-    background-color: whitesmoke;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: large;
-}
+ background-color: whitesmoke;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ font-size: large;}
 .headers_buiten_ul{
-    margin-left: 300px;
-}
+ margin-left: 300px;}
 ul{
-    margin-left: 300px;
-}
+ margin-left: 300px;}
 form{
-    margin-left: 300px;
-}
+ margin-left: 300px;}
 .logo{
-    width: 300px;
-    margin-left: 300px;
-}
+ width: 300px;
+ margin-left: 300px;}
 .merknaam{
-    font-size: 50px;
-}
+ font-size: 50px;}
 .horloge{
-    width: 300px;
-    margin-left: 300px;
-}
+ width: 300px;
+ margin-left: 300px;}
