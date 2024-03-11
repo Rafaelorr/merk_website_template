@@ -1,7 +1,7 @@
-import sqlite3
+from sqlite3 import Connection,connect,Cursor
 
-con:sqlite3.Connection = sqlite3.connect('database.db')
-cur:sqlite3.Cursor = sqlite3.Cursor(con)
+con:Connection = connect('database.db')
+cur:Cursor = Cursor(con)
 
 cur.execute('''CREATE TABLE bestellingen (
             id INTEGER PRIMARY KEY AUTOINCREMENT, 
