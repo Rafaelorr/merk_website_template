@@ -10,12 +10,6 @@ cur.execute('''CREATE TABLE bestellingen (
             straatnaam TEXT, 
             nummer INTEGEER
         )''')
-cur.execute('''CREATE TABLE acountcodes (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        acountcode INTEGER UNQIUE,
-        credits INTEGER
-)
-''')
 
 cur.close()
 con.close()
