@@ -1,21 +1,15 @@
-import sqlite3
+from sqlite3 import Connection,connect,Cursor
 
-con:sqlite3.Connection = sqlite3.connect('database.db')
-cur:sqlite3.Cursor = sqlite3.Cursor(con)
+con:Connection = connect('database.db')
+cur:Cursor = Cursor(con)
 
 cur.execute('''CREATE TABLE bestellingen (
-            id INTEGER PRIMARY KEY AUTOINCREMENT, 
-            email STRING, 
-            postcode INTEGER, 
-            straatnaam TEXT, 
-            nummer INTEGEER
-        )''')
-cur.execute('''CREATE TABLE acountcodes (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        acountcode INTEGER UNQIUE,
-        credits INTEGER
-)
-''')
+  id INTEGER PRIMARY KEY AUTOINCREMENT, 
+  email STRING, 
+  postcode INTEGER, 
+  straatnaam TEXT, 
+  nummer INTEGEER
+)''')
 
 cur.close()
 con.close()

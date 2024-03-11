@@ -1,27 +1,19 @@
 from flask import Flask,render_template,request,url_for
-import sqlite3
-from random import randint
+from sqlite3 import Connection,connect,Cursor
 
 app:Flask = Flask(__name__)
-
 
 @app.route("/bestel",methods=["GET","POST"])
 def bestel():
   if request.method == "POST":
-    bestelling:dict = {
-      "acountcode":request.form.get("acountcode"),
-      "postcode":request.form.get("postcode"),
-      "straatnaam":request.form.get("straatnaam"),
-      "nummer":request.form.get("nummer")
-    }
-    con:sqlite3.Connection = sqlite3.connect('database.db')
-    cur:sqlite3.Cursor = sqlite3.Cursor(con)
-    
-    
+    con:Connection = connect('database.db')
+    cur:Cursor = Cursor(con)
+
     cur.executescript(f"""INSERT INTO bestellingen (
-                      email,postcode,straatnaam,nummer) 
-                      VALUES('{bestelling["acountcode"]}','{bestelling["postcode"]}',
-                      '{bestelling["straatnaam"]}','{bestelling["nummer"]}')""")
+      email,postcode,straatnaam,nummer) 
+      VALUES('{request.form.get("acountcode")}','{request.form.get("postcode")}',
+      '{request.form.get("straatnaam")}','{request.form.get("nummer")}'
+    )""")
     con.commit()
 
     cur.close()
@@ -32,7 +24,6 @@ def bestel():
 @app.route("/")
 def home():
   return render_template("home.html",bestel_link=url_for("bestel"))
-
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0",debug=True)
