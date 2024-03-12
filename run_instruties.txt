@@ -1,5 +1,10 @@
 eerst instaleer je python:
     op windows:
+       als je een 64 windows styeem hebt run python-windows_instaler.exe
+       als het vraagt om python te instaleren als adminestder
+       dan vink dat aan
+       als je me niet vertrouwde of je het geen 64 windows styeem
+       gaan dan naar python.org en download de instaler daar
     op ubuntu linux:
         open het terminalvenster
         run deze comands:
