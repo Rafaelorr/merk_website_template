@@ -15,3 +15,8 @@
             als je me niet vertrouwde of je het geen 64 windows styeem
 
             gaan dan naar python.org en download de instaler daar
+    -instaleer de flask package:
+        ## open het terminalvenster
+        ## run deze comand:
+                - windows:
+                    `pip install flask`
