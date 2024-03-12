@@ -20,3 +20,10 @@ eerst instaleer je python:
         open het terminalvenster
         run deze comands:
             sudo dnf install python3
+instaleer de flask package:
+    open het terminalvenster
+    run deze comand:
+        windows:
+            pip install flask
+        linux:
+            pip3 install flask
