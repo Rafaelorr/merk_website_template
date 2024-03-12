@@ -1,0 +1,17 @@
+eerst instaleer je python:
+    op windows:
+    op ubuntu linux:
+        open het terminalvenster
+        run deze comands:
+            sudo apt-get update
+            sudo apt-get install python3.6
+        als deze niet werken
+        run deze comands:
+            sudo apt-get install software-properties-common
+            sudo add-apt-repository ppa:deadsnakes/ppa
+            sudo apt-get update
+            sudo apt-get install python3.8
+    op linux:
+        open het terminalvenster
+        run deze comands:
+            sudo dnf install python3
