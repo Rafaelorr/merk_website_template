@@ -8,11 +8,12 @@
         - op windows:
             als je een 64 windows styeem hebt run python-windows_instaler.exe
 
-            als het vraagt om python te instaleren als adminestde"r
+            als het vraagt om python te instaleren als administrator
 
-            dan vink dat aan
+            vink dat dan aan
+            En vergeet niet om op inculde python in styeem path te clicken
 
-            als je me niet vertrouwde of je het geen 64 windows styeem
+            als je me niet vertrouwde of je geen 64 bit windows styeem hebt
 
             gaan dan naar python.org en download de instaler daar
     -instaleer de flask package:
