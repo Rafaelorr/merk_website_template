@@ -27,3 +27,13 @@ instaleer de flask package:
             pip install flask
         linux:
             pip3 install flask
+run de code:
+    windows:
+        open de verkenner en rechtclick op de app.py file en kies open met en kies python
+    linux:
+        open het terminalvenster in de folder waar je de code hebt
+        en run de comand:
+            python3 app.py
+        tips om de het terminalvenster te gebruiken:
+            gebruik de ls comand om te zien wat er in je active folder zit
+            gebruik de cd comand om je active folder te veranderen naar een folder in je active folder
