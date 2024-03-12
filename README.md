@@ -20,3 +20,6 @@
         ## run deze comand:
                 - windows:
                     `pip install flask`
+    - run de code:
+        - windows:
+            open de verkenner en rechtclick op de app.py file en kies open met en kies python
