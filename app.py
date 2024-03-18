@@ -1,13 +1,13 @@
 from flask import Flask,render_template,request,url_for
-from sqlite3 import Connection,connect,Cursor
+import sqlite3
 
 app:Flask = Flask(__name__)
 
 @app.route("/bestel",methods=["GET","POST"])
 def bestel():
   if request.method == "POST":
-    con:Connection = connect('database.db')
-    cur:Cursor = Cursor(con)
+    con:sqlite3.Connection = sqlite3.connect('./database.db')
+    cur:sqlite3.Cursor = sqlite3.Cursor(con)
 
     cur.executescript(f"""INSERT INTO bestellingen (
       email,postcode,straatnaam,nummer) 
